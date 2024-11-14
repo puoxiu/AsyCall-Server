@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌词滚动播放</title>
+    <style>
+        /* 页面基础样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 容器样式，控制滚动区域的大小 */
+        .lyric-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 歌词区域，文本居中 */
+        .lyric {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 1.6;
+            animation: scrollLyrics 60s linear infinite, changeColor 5s ease-in-out infinite;
+        }
+
+        /* 歌词滚动的动画效果 */
+        @keyframes scrollLyrics {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        /* 彩色变化的动画效果 */
+        @keyframes changeColor {
+            0% {
+                color: #ff4d4d;
+            }
+            25% {
+                color: #ffcc00;
+            }
+            50% {
+                color: #66cc66;
+            }
+            75% {
+                color: #3399ff;
+            }
+            100% {
+                color: #ff4d4d;
+            }
+        }
+
+        /* 设置歌词文本的阴影效果，增强视觉效果 */
+        .lyric-text {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="lyric-container">
+        <div class="lyric">
+            <span class="lyric-text">
+                TEST<br>
+                TEST<br>
+                你是🐶<br>
+                你是🐶<br>
+                你是🐶<br>
+                你是🐶<br>
+                你是🐶<br>
+                你是🐶<br>
+                你是🐶<br>
+                你是🐶<br>
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
